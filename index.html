@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign-Up/Login Form</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/modal.css">
+
+</head>
+
+<body>
+
+  <div class="form">
+      <div class="tab-content">
+        <div id="signup">   
+          <h1>Расчет заработной платы сотрудников</h1>
+          <form action="/" method="post">
+            <div class="top-row">
+              <div class="field-wrap">
+                <label>
+                  Имя<span class="req">*</span>
+                </label>
+                <input type="text" id="firstName" required autocomplete="off"/>
+              </div>
+              <div class="field-wrap">
+                <label>
+                  Фамилия<span class="req">*</span>
+                </label>
+                <input type="text" id="secondName"required autocomplete="off" />
+              </div>
+
+            </div>
+            <div class="field-wrap">
+              <label>
+                Отдел<span class="req">*</span>
+              </label>
+              <input type="text" id="department" required autocomplete="off" />
+            </div>
+            <div class="field-wrap">
+              <label>
+                Должность <span class="req">*</span>
+              </label>
+              <input type="text" id="position" required autocomplete="off">
+            </div>
+            <div class="field-wrap">
+              <label>
+                Ставка<span class="req">*</span>
+              </label>
+              <input type="text" id="rate" required autocomplete="off">
+            </div>
+            <div class="field-wrap">
+              <p>
+                <select id="timeIncrease">
+                  <option label="Повышение за переработку рабочего времени" value="1" >none</option>
+                  <option value="1.5">1-3 часа</option>
+                  <option value="2.5">3-5 часов</option>
+                  <option value="3.5">5-10 часов</option>
+                  <option value="4.5">> 10 часов</option>
+                </select>
+              </p>
+            </div>
+            <div class="field-wrap">
+              <label>
+                Доля брака<span class="req">*</span>
+              </label>
+              <input type="text" id="defect" required autocomplete="off">
+            </div>
+            <div class="field-wrap">
+              <label class="container">С учетом пенсии
+                <input type="radio"  class="radio-group" value="1.2" name="credit">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Без учета пенсии
+                <input type="radio" class="radio-group" value="1" name="credit">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="field-wrap">
+              <input type="button" class="button button-block"  id="calculate-salary" value="Рассчитать зарплату"></input>
+              <input type="button" class="button button-block"  id="delete-button" value="Удалить сотрудника по ID"></input>
+              <select id="selectId"></select><br>
+              <input type="button" class="button button-block"  id="average-salary" value="Средняя з/п по отделу"></input>
+              <input type="button" class="button button-block"  id="show-table" value="Показать сотрудников"></input>
+            </div>
+
+        </form>
+        </div>
+        <div align="center" id="tableData">
+        </div>
+        <table id="showTable">
+
+        </table>
+
+      </div>
+</div>
+  <script data-main="js/compile.js" src="js/lib/require.js"></script>
+</body>
+</html>
